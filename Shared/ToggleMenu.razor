@@ -1,0 +1,21 @@
+<div class="@toogle">
+    <button @onclick="Toggle_Menu">
+        <i class='fa fa-th-list gray'></i>
+    </button>
+    <span class="@NavMenuCssClass">
+        <NavMenu />
+    </span>
+</div>
+
+
+@code {
+    bool collapseNavMenu = true;
+
+    string toogle => collapseNavMenu ? "toogle-bar" : "toogle-bar-menu";
+    string NavMenuCssClass => collapseNavMenu ? "disable" : null;
+
+    void Toggle_Menu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
